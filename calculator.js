@@ -9,7 +9,7 @@
 
 
 //Global variables
-const maximumdisplay = 9; // maximum digits displayed on the calculator's screen.
+const maximumdisplay = 6; // maximum digits displayed on the calculator's screen.
 
 let previousnumber = '';        //Number previously displayed
 let currentnumber = '';         //Number currently displayed in the readout
