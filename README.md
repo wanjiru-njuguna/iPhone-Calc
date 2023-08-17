@@ -2,8 +2,13 @@
 
 In this project, I used HTML, CSS and Vanilla javascript to recreate the calculator on my iPhone.
 
+[Working Sample](https://wanjiru-njuguna.github.io/iPhone-Calc/calculator.html)
+
+## Screenshot
 
 ![Screenshot](https://github.com/wanjiru-njuguna/iPhone-Calc/blob/main/screenshots/scr1.png?raw=true)
+
+## Details
 
 The calculator works more like the windows computer. For example, if you press a few numbers with multiple dual operators in there, the calculator will give you the answer to the first two numbers.
 
