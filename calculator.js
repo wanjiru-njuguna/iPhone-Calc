@@ -1,3 +1,12 @@
+// My remake of the iPhone calculator in vanilla JS
+//
+// by Wanjiru Njuguna
+//
+// August 2023
+//
+//  https://github.com/wanjiru-njuguna/iPhone-Calc
+//
+
 
 //Global variables
 const maximumdisplay = 9; // maximum digits displayed on the calculator's screen.
