@@ -10,7 +10,8 @@
 
 //Global variables
 const maximumdisplay = 9; // maximum digits displayed on the calculator's screen.
-
+const minimum_number = -999999999;
+const max_number = 999999999;
 let previousnumber = '';        //Number previously displayed
 let currentnumber = '';         //Number currently displayed in the readout
 let operatorsclicked = false;   //true if any operator button was previously clicked
@@ -529,10 +530,11 @@ function limitdisplaysize(result)
 
 function checkforoverflow(result)
 {
-    if((result < -999999999) ||(result > 999999999))
+    if((result < minimum_number) ||(result > max_number))
     {
         result = 'Overflowed';
         operationalstate = 1;
+        
 
     }
     return result;
