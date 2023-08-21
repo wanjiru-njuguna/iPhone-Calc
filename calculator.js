@@ -10,8 +10,6 @@
 
 //Global variables
 const maximumdisplay = 9; // maximum digits displayed on the calculator's screen.
-const minimum_number = -999999999;
-const max_number = 999999999;
 let previousnumber = '';        //Number previously displayed
 let currentnumber = '';         //Number currently displayed in the readout
 let operatorsclicked = false;   //true if any operator button was previously clicked
@@ -21,9 +19,20 @@ let operationalstate = 0;       //0=default, 1=overflowed; 2=division-by-zero
 
 
 
+function calculateminimumnumber(screendisplay)
+{
+    let minimum_number = '-';
+    for(let i = 0; i < screendisplay; i++)
+    {
+        minimum_number = minimum_number + '9';
+    }
+    minimum_number = Number(minimum_number);
+    return minimum_number;
+}
 
+let minimum_number = calculateminimumnumber(maximumdisplay);
 
-
+let max_number = -minimum_number;
 
 
 
