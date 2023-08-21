@@ -180,15 +180,18 @@ function mainbuttonlogic(btn)
         if(rptequalpreviousno === null)
         {
             result = carryoutopeartions(previousnumber, dualoperatorclicked, currentnumber);
+            result = checkforoverflow(result);
+
         
         }
         else
         {
             //Repeated = button press
             result = carryoutopeartions(currentnumber, dualoperatorclicked, rptequalpreviousno);
+            result = checkforoverflow(result);
+
 
         }
-       
         document.getElementById("idReadout").innerText = limitdisplaysize(result);
         
         if(rptequalpreviousno === null)
@@ -205,6 +208,8 @@ function mainbuttonlogic(btn)
     else if (btn == '%')
     {
         let result = findthepercentage(currentnumber);
+        result = checkforoverflow(result);
+
         document.getElementById("idReadout").innerText = limitdisplaysize(result);
         
         currentnumber = result
@@ -514,10 +519,22 @@ function limitdisplaysize(result)
    let displayedresultcount = calculatedigits(result);
     if(displayedresultcount > maximumdisplay)
     {
-        result = 'Overflowed';
-        operationalstate = 1;
+        result = result.toString();
+        result = result.slice(0,maximumdisplay+1);
+        operationalstate = 0;
     }
 
+    return result;
+}
+
+function checkforoverflow(result)
+{
+    if((result < -999999999) ||(result > 999999999))
+    {
+        result = 'Overflowed';
+        operationalstate = 1;
+
+    }
     return result;
 }
 
